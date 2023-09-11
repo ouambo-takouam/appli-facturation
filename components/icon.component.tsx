@@ -20,7 +20,7 @@ export const Icon: React.FC<IconProps> = ({
   name,
   width,
   height,
-  color = "#000",
+  color = "rgb(141, 144, 150)",
   ...props
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);

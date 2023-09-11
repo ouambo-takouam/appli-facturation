@@ -8,7 +8,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gray01: "rgb(141, 144, 150)",
+        gray01: "rgb(212, 215, 220)",
+        gray02: "rgb(141, 144, 150)",
         black01: "rgb(57, 58, 61)",
         black02: "rgb(40, 40, 40)",
       },
