@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Icon } from "./icon.component";
+import SideNavItem from "./sidenav-item.component";
 import itemsForSideNavigation from "@utils/side-navigation-items.json";
 
 export default function SideNavigation() {
@@ -12,6 +13,10 @@ export default function SideNavigation() {
   const currentPath = usePathname();
   const pathObject = itemsForSideNavigation[currentPath];
   const hasKeys = Object.keys(pathObject).length > 0;
+
+  /** Some types defined */
+  type Item = { path: string; slug: string };
+  type BigItem = { subtitle: string; items: Array<Item> };
 
   useEffect(() => {
     if (hasKeys) {
@@ -23,7 +28,15 @@ export default function SideNavigation() {
 
   return (
     <>
-      <div className="fixed top-0 bottom-0 w-[220px] bg-black02">
+      <div
+        className="fixed top-0 bottom-0 w-[220px] bg-black02"
+        onMouseOver={() => setActive(false)}
+        onMouseLeave={() => {
+          if (hasKeys) {
+            setActive(true);
+          }
+        }}
+      >
         {/** Logo + logo Text */}
         <div>
           <Link className="block py-3 px-[15px]" href="/">
@@ -92,48 +105,34 @@ export default function SideNavigation() {
 
           <div className="text-gray01 text-sm">
             <ul>
-              <li className="flex items-center h-10 cursor-pointer transition-all hover:bg-black">
-                <Link href="/get-things-done" className="flex items-center">
-                  <span className="py-2 pl-[18px] pr-2">
-                    <Icon name="home" width={20} height={20} />
-                  </span>
-                  <span
-                    className={`transition-opacity duration-300 ease-out delay-0 ${
-                      active && "opacity-0"
-                    }`}
-                  >
-                    A faire
-                  </span>
-                </Link>
-              </li>
-              <li className="flex items-center h-10 cursor-pointer transition-all hover:bg-black">
-                <Link href="/business-overview" className="flex items-center">
-                  <span className="py-2 pl-[18px] pr-2">
-                    <Icon name="scale" width={20} height={20} />
-                  </span>
-                  <span
-                    className={`transition-opacity duration-300 ease-out delay-0 ${
-                      active && "opacity-0"
-                    }`}
-                  >
-                    Mon entreprise
-                  </span>
-                </Link>
-              </li>
-              <li className="flex items-center h-10 cursor-pointer transition-all hover:bg-black">
-                <Link href="/banking" className="flex items-center">
-                  <span className="py-2 pl-[18px] pr-2">
-                    <Icon name="calculator" width={20} height={20} />
-                  </span>
-                  <span
-                    className={`transition-opacity duration-300 ease-out delay-0 ${
-                      active && "opacity-0"
-                    }`}
-                  >
-                    Ma gestion comptable
-                  </span>
-                </Link>
-              </li>
+              <SideNavItem
+                path="/get-things-done"
+                iconName="home"
+                label="A faire"
+                active={active}
+                selected={currentPath === "/get-things-done"}
+              />
+              <SideNavItem
+                path="/business-overview"
+                iconName="scale"
+                label="Mon entreprise"
+                active={active}
+                selected={currentPath === "/business-overview"}
+              />
+              <SideNavItem
+                path="/banking"
+                iconName="calculator"
+                label="Ma gestion comptable"
+                active={active}
+                selected={currentPath === "/banking"}
+              />
+              <SideNavItem
+                path="/customers"
+                iconName="payment"
+                label="Ma gestion commerciale"
+                active={active}
+                selected={currentPath === "/customers"}
+              />
             </ul>
           </div>
         </div>
@@ -157,7 +156,7 @@ export default function SideNavigation() {
           <>
             {pathObject.items && (
               <ul>
-                {pathObject.items.map((item) => (
+                {pathObject.items.map((item: Item) => (
                   <li
                     key={item.path}
                     className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black02"
@@ -170,7 +169,7 @@ export default function SideNavigation() {
 
             {pathObject.data && (
               <>
-                {pathObject.data.map((obj) => (
+                {pathObject.data.map((obj: BigItem) => (
                   <div key={obj.subtitle}>
                     <div className="flex items-center h-8 pl-4 mt-2 text-[13px] font-semibold uppercase">
                       {obj.subtitle}
