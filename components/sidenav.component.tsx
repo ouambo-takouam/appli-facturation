@@ -29,7 +29,7 @@ export default function SideNavigation() {
   return (
     <>
       <div
-        className="fixed top-0 bottom-0 w-[220px] bg-black02"
+        className="fixed top-0 bottom-0 w-[220px] bg-black03"
         onMouseOver={() => setActive(false)}
         onMouseLeave={() => {
           if (hasKeys) {
@@ -59,7 +59,7 @@ export default function SideNavigation() {
               </span>
               <div
                 className={`absolute w-0 left-[220px] h-8 transition-all duration-[450ms] ease-out delay-0 ${
-                  active && "w-[176px] left-[44px] bg-black02"
+                  active && "w-[176px] left-[44px] bg-black03"
                 }`}
               ></div>
             </div>
@@ -103,7 +103,7 @@ export default function SideNavigation() {
             </div>
           </div>
 
-          <div className="text-gray01 text-sm">
+          <div className="text-gray02 text-sm">
             <ul>
               <SideNavItem
                 path="/get-things-done"
@@ -141,8 +141,8 @@ export default function SideNavigation() {
       {/** sub-side navigation */}
       {hasKeys && (
         <div
-          className={`absolute top-0 bottom-0 left-[220px] text-sm text-white w-0 bg-black01 z-10 transition-width duration-[450ms] ease-out delay-0 ${
-            active && "left-[60px] w-[160px]"
+          className={`absolute top-0 bottom-0 text-sm text-white bg-black01 transition-width duration-[450ms] ease-out delay-0 ${
+            active ? "left-[60px] w-[160px]" : "left-[220px] w-0 opacity-0"
           }`}
         >
           <div
@@ -161,7 +161,9 @@ export default function SideNavigation() {
                     key={item.path}
                     className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black02"
                   >
-                    {item.slug}
+                    <Link href={item.path} className="w-full">
+                      {item.slug}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -171,16 +173,18 @@ export default function SideNavigation() {
               <>
                 {pathObject.data.map((obj: BigItem) => (
                   <div key={obj.subtitle}>
-                    <div className="flex items-center h-8 pl-4 mt-2 text-[13px] font-semibold uppercase">
+                    <div className="flex items-center h-8 pl-4 mt-4 text-[13px] font-semibold uppercase">
                       {obj.subtitle}
                     </div>
                     <ul>
                       {obj.items.map((item) => (
                         <li
                           key={item.path}
-                          className="flex items-center h-10 pl-4 font-light cursor-pointer transition-all hover:bg-black02"
+                          className="flex items-center h-10 pl-4 font-light text-gray02 cursor-pointer transition-all hover:bg-black02"
                         >
-                          {item.slug}
+                          <Link href={item.path} className="w-full">
+                            {item.slug}
+                          </Link>
                         </li>
                       ))}
                     </ul>

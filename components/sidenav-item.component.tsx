@@ -10,7 +10,7 @@ export default function SideNavItem({
 }) {
   return (
     <li className="flex items-center h-10 cursor-pointer transition-all hover:bg-black">
-      <Link href={path} className="flex items-center">
+      <Link href={path} className="flex items-center w-full">
         <span className="py-2 pl-[18px] pr-2">
           <Icon
             name={iconName}

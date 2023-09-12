@@ -6,4 +6,8 @@ export type IconsType =
   | "calculator"
   | "payment"
   | "customer"
-  | "employee";
+  | "employee"
+  | "arrow-down"
+  | "search"
+  | "print"
+  | "export";
