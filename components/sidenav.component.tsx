@@ -1,12 +1,25 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Icon } from "./icon.component";
 import Image from "next/image";
-import items from "@utils/side-navigation-items.json";
+import { usePathname } from "next/navigation";
+import { Icon } from "./icon.component";
+import itemsForSideNavigation from "@utils/side-navigation-items.json";
 
 export default function SideNavigation() {
   const [active, setActive] = useState(false);
+
+  const currentPath = usePathname();
+  const pathObject = itemsForSideNavigation[currentPath];
+  const hasKeys = Object.keys(pathObject).length > 0;
+
+  useEffect(() => {
+    if (hasKeys) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [hasKeys]);
 
   return (
     <>
@@ -80,104 +93,105 @@ export default function SideNavigation() {
           <div className="text-gray01 text-sm">
             <ul>
               <li className="flex items-center h-10 cursor-pointer transition-all hover:bg-black">
-                <span className="py-2 pl-[18px] pr-2">
-                  <Icon name="home" width={20} height={20} />
-                </span>
-                <span
-                  className={`transition-opacity duration-300 ease-out delay-0 ${
-                    active && "opacity-0"
-                  }`}
-                >
-                  A faire
-                </span>
+                <Link href="/get-things-done" className="flex items-center">
+                  <span className="py-2 pl-[18px] pr-2">
+                    <Icon name="home" width={20} height={20} />
+                  </span>
+                  <span
+                    className={`transition-opacity duration-300 ease-out delay-0 ${
+                      active && "opacity-0"
+                    }`}
+                  >
+                    A faire
+                  </span>
+                </Link>
               </li>
               <li className="flex items-center h-10 cursor-pointer transition-all hover:bg-black">
-                <span className="py-2 pl-[18px] pr-2">
-                  <Icon name="scale" width={20} height={20} />
-                </span>
-                <span
-                  className={`transition-opacity duration-300 ease-out delay-0 ${
-                    active && "opacity-0"
-                  }`}
-                >
-                  Mon entreprise
-                </span>
+                <Link href="/business-overview" className="flex items-center">
+                  <span className="py-2 pl-[18px] pr-2">
+                    <Icon name="scale" width={20} height={20} />
+                  </span>
+                  <span
+                    className={`transition-opacity duration-300 ease-out delay-0 ${
+                      active && "opacity-0"
+                    }`}
+                  >
+                    Mon entreprise
+                  </span>
+                </Link>
               </li>
               <li className="flex items-center h-10 cursor-pointer transition-all hover:bg-black">
-                <span className="py-2 pl-[18px] pr-2">
-                  <Icon name="calculator" width={20} height={20} />
-                </span>
-                <span
-                  className={`transition-opacity duration-300 ease-out delay-0 ${
-                    active && "opacity-0"
-                  }`}
-                >
-                  Ma gestion comptable
-                </span>
+                <Link href="/banking" className="flex items-center">
+                  <span className="py-2 pl-[18px] pr-2">
+                    <Icon name="calculator" width={20} height={20} />
+                  </span>
+                  <span
+                    className={`transition-opacity duration-300 ease-out delay-0 ${
+                      active && "opacity-0"
+                    }`}
+                  >
+                    Ma gestion comptable
+                  </span>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
-
-        {/** Pour tester l'animation */}
-        <button
-          type="button"
-          className="text-white bg-black px-2 py-1 mt-20"
-          onClick={() => setActive((prev) => !prev)}
-        >
-          Swipe
-        </button>
       </div>
 
       {/** sub-side navigation */}
-      <div
-        className={`absolute top-0 bottom-0 left-[220px] text-sm text-white w-0 bg-black01 z-10 transition-width duration-[450ms] ease-out delay-0 ${
-          active && "left-[60px] w-[160px]"
-        }`}
-      >
+      {hasKeys && (
         <div
-          className={`p-4 font-bold transition-opacity duration-[400ms] ease-out delay-0  ${
-            !active && "opacity-0 hidden"
+          className={`absolute top-0 bottom-0 left-[220px] text-sm text-white w-0 bg-black01 z-10 transition-width duration-[450ms] ease-out delay-0 ${
+            active && "left-[60px] w-[160px]"
           }`}
         >
-          Ma gestion commerciale
+          <div
+            className={`p-4 font-bold transition-opacity duration-[400ms] ease-out delay-0  ${
+              !active && "opacity-0 hidden"
+            }`}
+          >
+            {pathObject.title}
+          </div>
+
+          <>
+            {pathObject.items && (
+              <ul>
+                {pathObject.items.map((item) => (
+                  <li
+                    key={item.path}
+                    className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black02"
+                  >
+                    {item.slug}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {pathObject.data && (
+              <>
+                {pathObject.data.map((obj) => (
+                  <div key={obj.subtitle}>
+                    <div className="flex items-center h-8 pl-4 mt-2 text-[13px] font-semibold uppercase">
+                      {obj.subtitle}
+                    </div>
+                    <ul>
+                      {obj.items.map((item) => (
+                        <li
+                          key={item.path}
+                          className="flex items-center h-10 pl-4 font-light cursor-pointer transition-all hover:bg-black02"
+                        >
+                          {item.slug}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </>
+            )}
+          </>
         </div>
-
-        <>
-          {/*<ul>
-            <li className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black02">
-              Mon entreprise
-            </li>
-            <li className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black02">
-              Trésorerie
-            </li>
-            <li className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black02">
-              Rapports
-            </li>
-        </ul>*/}
-
-          <div className="flex items-center h-8 pl-4 mt-2 text-[13px] font-semibold uppercase">
-            Vente
-          </div>
-          <ul>
-            <li className="flex items-center h-10 pl-4 font-light cursor-pointer transition-all hover:bg-black02">
-              Clients
-            </li>
-            <li className="flex items-center h-10 pl-4 font-light cursor-pointer transition-all hover:bg-black02">
-              Produits et services
-            </li>
-          </ul>
-
-          <div className="flex items-center h-8 pl-4 mt-7 text-[13px] font-semibold uppercase">
-            Depenses
-          </div>
-          <ul>
-            <li className="flex items-center h-10 pl-4 font-light cursor-pointer transition-all hover:bg-black02">
-              Fournisseurs
-            </li>
-          </ul>
-        </>
-      </div>
+      )}
     </>
   );
 }

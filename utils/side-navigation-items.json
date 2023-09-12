@@ -1,6 +1,6 @@
 {
-  "get-things-done": {},
-  "business-overview": {
+  "/get-things-done": {},
+  "/business-overview": {
     "title": "Mon entreprise",
     "items": [
       { "slug": "Mon entreprise", "path": "/business-overview" },
@@ -8,7 +8,7 @@
       { "slug": "Rapports", "path": "/reports" }
     ]
   },
-  "banking": {
+  "/banking": {
     "title": "Ma gestion comptable",
     "data": [
       {
@@ -25,7 +25,7 @@
       }
     ]
   },
-  "customers": {
+  "/customers": {
     "title": "Ma gestion commerciale",
     "data": [
       {
