@@ -1,5 +1,5 @@
-import SideNavigation from "@components/sidenav.component";
-import TopNavigation from "@components/topnav.component";
+import SideNavigation from "@components/navigation/sidenav.component";
+import TopNavigation from "@components/navigation/topnav.component";
 import { ReactNode } from "react";
 
 export default function OnBoardingLayout({

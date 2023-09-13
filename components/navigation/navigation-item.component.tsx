@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Icon } from "./icon.component";
+import { Icon } from "../icon.component";
 
-export default function SideNavItem({
+export default function NavigationItem({
   path,
   iconName,
   label,

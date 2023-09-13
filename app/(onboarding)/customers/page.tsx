@@ -1,3 +1,5 @@
+import CustomInput from "@components/forms/custom-input.component";
+import CustomerModal from "@components/forms/customer-modal.component";
 import { Icon } from "@components/icon.component";
 
 export default function CustomersPage() {
@@ -35,7 +37,7 @@ export default function CustomersPage() {
         <div className="p-6">
           {/** content options */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center border border-gray02 w-72 py-1.5 px-2 rounded-[3px] text-sm text-black01 hover:shadow-3xl">
+            <div className="flex items-center border border-gray02 w-72 py-1.5 px-2 rounded-[3px] text-sm text-black01 hover:shadow-search">
               <input className="flex-1 focus:outline-none" />
               <span>
                 <Icon name="search" width={22} height={22} />
@@ -63,30 +65,7 @@ export default function CustomersPage() {
         </div>
       </div>
 
-      {/** Customer modal */}
-      <div className="fixed inset-0 bg-black bg-opacity-40">
-        <div className="fixed right-0 top-0 bottom-0 w-2/5 text-gray04 bg-white shadow-md h-full">
-          {/** header */}
-          <div className="fixed left-[60%] right-0 h-14 px-[14px] py-5 flex items-center shadow-sm">
-            <span className="flex-1 font-semibold text-xl text-center">
-              Client
-            </span>
-            <span className="cursor-pointer p-1 rounded hover:bg-gray02">
-              <Icon name="close" width={20} height={20} />
-            </span>
-          </div>
-
-          {/** footer */}
-          <div className="fixed left-[60%] right-0 bottom-0 h-16 flex items-center px-4 justify-end border">
-            <button
-              type="button"
-              className="text-white font-semibold px-4 py-1 rounded bg-green02 transition-all hover:bg-green03"
-            >
-              Enregistrer
-            </button>
-          </div>
-        </div>
-      </div>
+      <CustomerModal />
     </>
   );
 }

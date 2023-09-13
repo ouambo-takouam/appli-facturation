@@ -8,10 +8,16 @@ export type IconsType =
   | "customer"
   | "employee"
   | "arrow-down"
+  | "arrow-up"
   | "filter-arrow-up"
   | "filter-arrow-down"
   | "filter-arrow-up-down"
   | "search"
   | "print"
   | "export"
-  | "close";
+  | "close"
+  | "address"
+  | "place"
+  | "attachement"
+  | "payment-mode"
+  | "file";

@@ -21,7 +21,9 @@ const config: Config = {
       },
       boxShadow: {
         btn: "0 0 0 2px rgb(255, 255, 255)",
-        "3xl": "0 0 0 2px rgba(44, 160, 28, 0.5)",
+        search: "0 0 0 2px rgba(44, 160, 28, 0.5)",
+        input: "0 0 0 2px rgba(161, 161, 161, 0.25)",
+        box: "1px 1px 12px 2px rgba(161, 161, 161, 0.25)",
       },
     },
   },

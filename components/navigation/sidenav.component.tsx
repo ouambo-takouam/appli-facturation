@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Icon } from "./icon.component";
-import SideNavItem from "./sidenav-item.component";
+import { Icon } from "../icon.component";
+import NavigationItem from "./navigation-item.component";
 import itemsForSideNavigation from "@utils/side-navigation-items.json";
 
 export default function SideNavigation() {
@@ -105,28 +105,28 @@ export default function SideNavigation() {
 
           <div className="text-gray02 text-sm">
             <ul>
-              <SideNavItem
+              <NavigationItem
                 path="/get-things-done"
                 iconName="home"
                 label="A faire"
                 active={active}
                 selected={currentPath === "/get-things-done"}
               />
-              <SideNavItem
+              <NavigationItem
                 path="/business-overview"
                 iconName="scale"
                 label="Mon entreprise"
                 active={active}
                 selected={currentPath === "/business-overview"}
               />
-              <SideNavItem
+              <NavigationItem
                 path="/banking"
                 iconName="calculator"
                 label="Ma gestion comptable"
                 active={active}
                 selected={currentPath === "/banking"}
               />
-              <SideNavItem
+              <NavigationItem
                 path="/customers"
                 iconName="payment"
                 label="Ma gestion commerciale"
