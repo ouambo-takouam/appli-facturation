@@ -27,6 +27,7 @@ export default function CustomersPage() {
 
       {/** main content */}
       <div className="p-6">
+        {/** content options */}
         <div className="flex items-center justify-between">
           <div className="flex items-center border border-gray02 w-72 py-1.5 px-2 rounded-[3px] text-sm text-black01 hover:shadow-3xl">
             <input className="flex-1 focus:outline-none" />
@@ -40,6 +41,16 @@ export default function CustomersPage() {
             </span>
             <span className="p-1.5 rounded cursor-pointer hover:bg-gray01">
               <Icon name="export" width={24} height={24} />
+            </span>
+          </div>
+        </div>
+
+        {/** content header */}
+        <div>
+          <div className="flex items-center text-xs leading-4 font-bold">
+            <span className="uppercase">Name</span>
+            <span className="text-gray04">
+              <Icon name="filter-arrow-up-down" width={20} height={20} />
             </span>
           </div>
         </div>

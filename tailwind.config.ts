@@ -11,6 +11,7 @@ const config: Config = {
         gray01: "rgb(244, 245, 248)",
         gray02: "rgb(212, 215, 220)",
         gray03: "rgb(141, 144, 150)",
+        gray04: "rgb(107,108,114)",
         green01: "rgb(83, 183, 0)",
         green02: "rgb(44, 160, 28)",
         green03: "rgb(37, 143, 29)",

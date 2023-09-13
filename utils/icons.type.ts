@@ -8,6 +8,9 @@ export type IconsType =
   | "customer"
   | "employee"
   | "arrow-down"
+  | "filter-arrow-up"
+  | "filter-arrow-down"
+  | "filter-arrow-up-down"
   | "search"
   | "print"
   | "export";

@@ -159,7 +159,7 @@ export default function SideNavigation() {
                 {pathObject.items.map((item: Item) => (
                   <li
                     key={item.path}
-                    className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black02"
+                    className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black03"
                   >
                     <Link href={item.path} className="w-full">
                       {item.slug}
@@ -180,7 +180,7 @@ export default function SideNavigation() {
                       {obj.items.map((item) => (
                         <li
                           key={item.path}
-                          className="flex items-center h-10 pl-4 font-light text-gray02 cursor-pointer transition-all hover:bg-black02"
+                          className="flex items-center h-10 pl-4 font-light text-gray02 cursor-pointer transition-all hover:bg-black03"
                         >
                           <Link href={item.path} className="w-full">
                             {item.slug}
