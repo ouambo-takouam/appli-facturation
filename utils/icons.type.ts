@@ -13,4 +13,5 @@ export type IconsType =
   | "filter-arrow-up-down"
   | "search"
   | "print"
-  | "export";
+  | "export"
+  | "close";
