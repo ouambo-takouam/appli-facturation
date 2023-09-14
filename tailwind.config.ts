@@ -9,6 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         gray01: "rgb(244, 245, 248)",
+        gray02a: "rgba(57,58,61,.1)",
         gray02: "rgb(212, 215, 220)",
         gray03: "rgb(141, 144, 150)",
         gray04: "rgb(107,108,114)",

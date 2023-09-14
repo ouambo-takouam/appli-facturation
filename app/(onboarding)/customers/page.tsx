@@ -34,9 +34,9 @@ export default function CustomersPage() {
         </header>
 
         {/** main content */}
-        <div className="p-6">
+        <div className="py-14 px-11">
           {/** content options */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-4">
             <div className="flex items-center border border-gray02 w-72 py-1.5 px-2 rounded-[3px] text-sm text-black01 hover:shadow-search">
               <input className="flex-1 focus:outline-none" />
               <span>
@@ -54,18 +54,39 @@ export default function CustomersPage() {
           </div>
 
           {/** content header */}
-          <div>
-            <div className="flex items-center text-xs leading-4 font-bold">
+          <div className="flex mb-2">
+            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
               <span className="uppercase">Name</span>
-              <span className="text-gray04">
+              <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
                 <Icon name="filter-arrow-up-down" width={20} height={20} />
               </span>
+            </div>
+            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+              <span className="uppercase">Company name</span>
+              <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
+                <Icon name="filter-arrow-up-down" width={20} height={20} />
+              </span>
+            </div>
+            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+              <span className="uppercase">Phone</span>
+            </div>
+            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+              <span className="uppercase">Currency</span>
+            </div>
+            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+              <span className="uppercase">Open balance</span>
+              <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
+                <Icon name="filter-arrow-up-down" width={20} height={20} />
+              </span>
+            </div>
+            <div className="flex flex-1 justify-end items-center text-xs leading-4 font-bold">
+              <span className="uppercase">Action</span>
             </div>
           </div>
         </div>
       </div>
 
-      <CustomerModal />
+      {/* <CustomerModal /> */}
     </>
   );
 }
