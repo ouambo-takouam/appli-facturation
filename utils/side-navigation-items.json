@@ -40,5 +40,21 @@
         "items": [{ "slug": "Fournisseurs", "path": "/vendors" }]
       }
     ]
+  },
+  "/items": {
+    "title": "Ma gestion commerciale",
+    "data": [
+      {
+        "subtitle": "VENTES",
+        "items": [
+          { "slug": "Clients", "path": "/customers" },
+          { "slug": "Produits et services", "path": "/items" }
+        ]
+      },
+      {
+        "subtitle": "DÉPENSES",
+        "items": [{ "slug": "Fournisseurs", "path": "/vendors" }]
+      }
+    ]
   }
 }

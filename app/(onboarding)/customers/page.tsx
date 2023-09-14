@@ -1,5 +1,5 @@
-import CustomInput from "@components/forms/custom-input.component";
-import CustomerModal from "@components/forms/customer-modal.component";
+// import CustomInput from "@components/forms/custom-input.component";
+// import CustomerModal from "@components/forms/customer-modal.component";
 import { Icon } from "@components/icon.component";
 
 export default function CustomersPage() {
@@ -12,13 +12,13 @@ export default function CustomersPage() {
             <div className="flex items-center gap-[1px]">
               <button
                 type="button"
-                className="text-white font-semibold px-4 py-1 rounded-l rounded-r-sm bg-green02 transition-all hover:bg-green03"
+                className="text-white font-semibold px-4 py-1.5 rounded-l rounded-r-sm bg-green02 transition-all hover:bg-green03"
               >
                 New client
               </button>
               <button
                 type="button"
-                className="text-white font-semibold px-2 py-1 rounded-l-sm rounded-r bg-green02 transition-all hover:bg-green03"
+                className="text-white font-semibold px-2 py-1.5 rounded-l-sm rounded-r bg-green02 transition-all hover:bg-green03"
               >
                 <span>
                   <Icon
@@ -86,7 +86,7 @@ export default function CustomersPage() {
         </div>
       </div>
 
-      {/* <CustomerModal /> */}
+      {/**<CustomerModal />*/}
     </>
   );
 }
