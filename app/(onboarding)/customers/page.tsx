@@ -55,7 +55,7 @@ export default function CustomersPage() {
           </div>
 
           {/** content header */}
-          <div className="flex mb-2 border-b-2 font-bold">
+          <div className="flex border-b-2 font-bold">
             <div className="flex flex-1 items-center leading-8">
               <span className="uppercase">Name</span>
               <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
