@@ -1,4 +1,5 @@
 import { Icon } from "@components/icon.component";
+import ProductRowItem from "@components/product-row-item.component";
 
 export default function ItemsPage() {
   return (
@@ -26,7 +27,7 @@ export default function ItemsPage() {
       </header>
 
       {/** main content */}
-      <div className="py-14 px-11">
+      <div className="py-14 px-11 text-xs">
         {/** content options */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center border border-gray02 w-64 py-1.5 px-2 rounded-[3px] text-sm text-black01 hover:shadow-search">
@@ -46,7 +47,7 @@ export default function ItemsPage() {
         </div>
 
         {/** content header */}
-        <div className="flex mb-2 border-b-4 text-xs font-bold">
+        <div className="flex border-b-4 font-bold">
           <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Nom</span>
             <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
@@ -99,6 +100,10 @@ export default function ItemsPage() {
             <span className="uppercase">Action</span>
           </div>
         </div>
+
+        {/** products rows  */}
+        <ProductRowItem />
+        <ProductRowItem />
       </div>
     </div>
   );

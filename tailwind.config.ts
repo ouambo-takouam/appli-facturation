@@ -26,6 +26,9 @@ const config: Config = {
         input: "0 0 2px 2px rgba(44, 160, 28, 0.15)",
         box: "1px 1px 12px 2px rgba(161, 161, 161, 0.25)",
       },
+      backgroundImage: {
+        product: "url('/public/images/png/product.png')",
+      },
     },
   },
   plugins: [],
