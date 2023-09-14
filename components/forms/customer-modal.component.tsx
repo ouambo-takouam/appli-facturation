@@ -1,6 +1,7 @@
 import { Icon } from "@components/icon.component";
 import CustomInput from "./custom-input.component";
 import CustomSelect from "./custom-select.component";
+import CustomTextarea from "./custom-textarea.component";
 
 export default function CustomerModal() {
   return (
@@ -18,7 +19,7 @@ export default function CustomerModal() {
 
         {/** content */}
         <div className="absolute p-6 top-14 bottom-16 left-0 right-0 overflow-auto">
-          {/** first bloc */}
+          {/** (Nom et coordonnées) */}
           <div className="rounded pb-4 shadow-box mb-6">
             <div className="flex items-center gap-3 py-3 px-4 text-black02 cursor-pointer hover:bg-gray01">
               <span>
@@ -50,20 +51,22 @@ export default function CustomerModal() {
             </div>
           </div>
 
-          {/** second bloc */}
+          {/** (Adresses) */}
           <div className="rounded pb-4 shadow-box mb-6">
             <div className="flex items-center gap-3 py-3 px-4 text-black02 cursor-pointer hover:bg-gray01">
               <span>
-                <Icon name="address" width={24} height={24} />
+                <Icon name="place" width={24} height={24} />
               </span>
               <span className="flex-1 font-bold">Adresses</span>
               <span>
-                <Icon name="place" width={24} height={24} />
+                <Icon name="arrow-down" width={24} height={24} />
               </span>
             </div>
 
             <div className="px-6">
-              <h3 className="leading-8 font-bold">Adresse de faturation</h3>
+              <h3 className="leading-8 font-bold text-sm text-black03">
+                Adresse de faturation
+              </h3>
               <div className="flex items-center mb-4 gap-x-4">
                 <CustomInput label="Adresse postale 1" />
                 <CustomInput label="Adresse postale 2" />
@@ -76,6 +79,26 @@ export default function CustomerModal() {
                 <CustomInput label="Code postal" />
                 <CustomInput label="Pays" />
               </div>
+            </div>
+          </div>
+
+          {/** (Pieces jointes) */}
+          <div className="rounded pb-4 shadow-box mb-6">
+            <div className="flex items-center gap-3 py-3 px-4 text-black02 cursor-pointer hover:bg-gray01">
+              <span>
+                <Icon name="attachment" width={24} height={24} />
+              </span>
+              <span className="flex-1 font-bold">Notes et pièces jointes</span>
+              <span>
+                <Icon name="arrow-down" width={24} height={24} />
+              </span>
+            </div>
+
+            <div className="px-6">
+              <div className="flex items-center mb-4 gap-x-4">
+                <CustomTextarea label="Notes" />
+              </div>
+              <div className="flex items-center mb-4 gap-x-4"></div>
             </div>
           </div>
         </div>

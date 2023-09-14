@@ -18,6 +18,6 @@ export type IconsType =
   | "close"
   | "address"
   | "place"
-  | "attachement"
+  | "attachment"
   | "payment-mode"
   | "file";
