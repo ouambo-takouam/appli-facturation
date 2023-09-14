@@ -83,7 +83,7 @@ export default function CustomerModal() {
           </div>
 
           {/** (Pieces jointes) */}
-          <div className="rounded pb-4 shadow-box mb-6">
+          {/*<div className="rounded pb-4 shadow-box mb-6">
             <div className="flex items-center gap-3 py-3 px-4 text-black02 cursor-pointer hover:bg-gray01">
               <span>
                 <Icon name="attachment" width={24} height={24} />
@@ -99,6 +99,60 @@ export default function CustomerModal() {
                 <CustomTextarea label="Notes" />
               </div>
               <div className="flex items-center mb-4 gap-x-4"></div>
+            </div>
+          </div>*/}
+
+          {/** (Paiements) */}
+          <div className="rounded pb-4 shadow-box mb-6">
+            <div className="flex items-center gap-3 py-3 px-4 text-black02 cursor-pointer hover:bg-gray01">
+              <span>
+                <Icon name="place" width={24} height={24} />
+              </span>
+              <span className="flex-1 font-bold">Paiements</span>
+              <span>
+                <Icon name="payment-mode" width={24} height={24} />
+              </span>
+            </div>
+
+            <div className="px-6">
+              <div className="flex items-center mb-4 gap-x-4">
+                <CustomSelect label="Mode de paiment principal" />
+                <CustomSelect label="Conditions" />
+              </div>
+              <div className="flex items-center mb-4 gap-x-4">
+                <CustomSelect label="Options de livraison du document commercial" />
+                <CustomSelect label="Langue a utiliser lors de l'envoi des factures" />
+              </div>
+            </div>
+          </div>
+
+          {/** (Infos supplementaires) */}
+          <div className="rounded pb-4 shadow-box mb-6">
+            <div className="flex items-center gap-3 py-3 px-4 text-black02 cursor-pointer hover:bg-gray01">
+              <span>
+                <Icon name="place" width={24} height={24} />
+              </span>
+              <span className="flex-1 font-bold">Infos supplementaires</span>
+              <span>
+                <Icon name="file" width={24} height={24} />
+              </span>
+            </div>
+
+            <div className="px-6">
+              <h3 className="leading-8 font-bold text-sm text-black03">
+                Taxes
+              </h3>
+              <div className="flex items-center mb-4 gap-x-4">
+                <CustomInput label="Numero d'immatriculation" />
+              </div>
+
+              <h3 className="leading-8 font-bold text-sm text-black03">
+                Solde d'ouverture
+              </h3>
+              <div className="flex items-center mb-4 gap-x-4">
+                <CustomInput label="Solde d'ouverture" />
+                <CustomInput label="En date du" />
+              </div>
             </div>
           </div>
         </div>
