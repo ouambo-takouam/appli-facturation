@@ -46,56 +46,56 @@ export default function ItemsPage() {
         </div>
 
         {/** content header */}
-        <div className="flex mb-2">
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+        <div className="flex mb-2 border-b-4 text-xs font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Nom</span>
             <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
               <Icon name="filter-arrow-up-down" width={20} height={20} />
             </span>
           </div>
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Reference</span>
             <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
               <Icon name="filter-arrow-up-down" width={20} height={20} />
             </span>
           </div>
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Type</span>
             <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
               <Icon name="filter-arrow-up-down" width={20} height={20} />
             </span>
           </div>
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Currency</span>
             <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
               <Icon name="filter-arrow-up-down" width={20} height={20} />
             </span>
           </div>
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Description vente</span>
           </div>
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Prix de vente</span>
             <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
               <Icon name="filter-arrow-up-down" width={20} height={20} />
             </span>
           </div>
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Cout</span>
             <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
               <Icon name="filter-arrow-up-down" width={20} height={20} />
             </span>
           </div>
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Quantite en stock</span>
             <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
               <Icon name="filter-arrow-up-down" width={20} height={20} />
             </span>
           </div>
-          <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 items-center border-l pl-2 leading-8">
             <span className="uppercase">Point de commande</span>
           </div>
-          <div className="flex flex-1 justify-end items-center text-xs leading-4 font-bold">
+          <div className="flex flex-1 justify-end items-center border-l pl-2">
             <span className="uppercase">Action</span>
           </div>
         </div>

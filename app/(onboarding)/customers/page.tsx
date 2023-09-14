@@ -1,5 +1,6 @@
 // import CustomInput from "@components/forms/custom-input.component";
 // import CustomerModal from "@components/forms/customer-modal.component";
+import CustomerRowItem from "@components/customer-row-item.component";
 import { Icon } from "@components/icon.component";
 
 export default function CustomersPage() {
@@ -34,7 +35,7 @@ export default function CustomersPage() {
         </header>
 
         {/** main content */}
-        <div className="py-14 px-11">
+        <div className="py-14 px-11 text-xs">
           {/** content options */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center border border-gray02 w-72 py-1.5 px-2 rounded-[3px] text-sm text-black01 hover:shadow-search">
@@ -54,35 +55,39 @@ export default function CustomersPage() {
           </div>
 
           {/** content header */}
-          <div className="flex mb-2">
-            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+          <div className="flex mb-2 border-b-2 font-bold">
+            <div className="flex flex-1 items-center leading-8">
               <span className="uppercase">Name</span>
               <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
                 <Icon name="filter-arrow-up-down" width={20} height={20} />
               </span>
             </div>
-            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+            <div className="flex flex-1 items-center leading-8">
               <span className="uppercase">Company name</span>
               <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
                 <Icon name="filter-arrow-up-down" width={20} height={20} />
               </span>
             </div>
-            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+            <div className="flex flex-1 items-center leading-8">
               <span className="uppercase">Phone</span>
             </div>
-            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+            <div className="flex flex-1 items-center leading-8">
               <span className="uppercase">Currency</span>
             </div>
-            <div className="flex flex-1 items-center text-xs leading-4 font-bold">
+            <div className="flex flex-1 items-center leading-8 font-bold">
               <span className="uppercase">Open balance</span>
               <span className="text-gray04 rounded hover:bg-gray02a cursor-pointer">
                 <Icon name="filter-arrow-up-down" width={20} height={20} />
               </span>
             </div>
-            <div className="flex flex-1 justify-end items-center text-xs leading-4 font-bold">
+            <div className="flex flex-1 justify-end items-center leading-8">
               <span className="uppercase">Action</span>
             </div>
           </div>
+
+          {/** customers rows  */}
+          <CustomerRowItem />
+          <CustomerRowItem />
         </div>
       </div>
 
