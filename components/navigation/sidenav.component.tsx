@@ -5,26 +5,25 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Icon } from "../icon.component";
 import NavigationItem from "./navigation-item.component";
-import itemsForSideNavigation from "@utils/side-navigation-items.json";
+import { getNavigationPathData } from "@utils/navigation";
 
 export default function SideNavigation() {
   const [active, setActive] = useState(false);
 
   const currentPath = usePathname();
-  const pathObject = itemsForSideNavigation[currentPath];
-  const hasKeys = Object.keys(pathObject).length > 0;
+  const navigationData = getNavigationPathData(currentPath);
 
   /** Some types defined */
   type Item = { path: string; slug: string };
   type BigItem = { subtitle: string; items: Array<Item> };
 
   useEffect(() => {
-    if (hasKeys) {
+    if (navigationData) {
       setActive(true);
     } else {
       setActive(false);
     }
-  }, [hasKeys]);
+  }, [navigationData]);
 
   return (
     <>
@@ -32,7 +31,7 @@ export default function SideNavigation() {
         className="fixed top-0 bottom-0 w-[220px] bg-black03"
         onMouseOver={() => setActive(false)}
         onMouseLeave={() => {
-          if (hasKeys) {
+          if (navigationData) {
             setActive(true);
           }
         }}
@@ -139,7 +138,7 @@ export default function SideNavigation() {
       </div>
 
       {/** sub-side navigation */}
-      {hasKeys && (
+      {navigationData && (
         <div
           className={`absolute top-0 bottom-0 text-sm text-white bg-black01 transition-width duration-[450ms] ease-out delay-0 ${
             active ? "left-[60px] w-[160px]" : "left-[220px] w-0 opacity-0"
@@ -150,16 +149,18 @@ export default function SideNavigation() {
               !active && "opacity-0 hidden"
             }`}
           >
-            {pathObject.title}
+            {navigationData.title}
           </div>
 
           <>
-            {pathObject.items && (
+            {navigationData.items && (
               <ul>
-                {pathObject.items.map((item: Item) => (
+                {navigationData.items.map((item: Item) => (
                   <li
                     key={item.path}
-                    className="flex items-center h-10 pl-4 cursor-pointer transition-all hover:bg-black03"
+                    className={`flex items-center h-10 pl-4 cursor-pointer ${
+                      item.path == currentPath && "bg-black text-white"
+                    } transition-all hover:bg-black03`}
                   >
                     <Link href={item.path} className="w-full">
                       {item.slug}
@@ -169,9 +170,9 @@ export default function SideNavigation() {
               </ul>
             )}
 
-            {pathObject.data && (
+            {navigationData.data && (
               <>
-                {pathObject.data.map((obj: BigItem) => (
+                {navigationData.data.map((obj: BigItem) => (
                   <div key={obj.subtitle}>
                     <div className="flex items-center h-8 pl-4 mt-4 text-[13px] font-semibold uppercase">
                       {obj.subtitle}
@@ -180,7 +181,9 @@ export default function SideNavigation() {
                       {obj.items.map((item) => (
                         <li
                           key={item.path}
-                          className="flex items-center h-10 pl-4 font-light text-gray02 cursor-pointer transition-all hover:bg-black03"
+                          className={`flex items-center h-10 pl-4 font-light text-gray02 cursor-pointer ${
+                            item.path == currentPath && "bg-black text-white"
+                          } transition-all hover:bg-black03`}
                         >
                           <Link href={item.path} className="w-full">
                             {item.slug}
