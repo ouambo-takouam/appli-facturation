@@ -19,6 +19,7 @@ const config: Config = {
         black01: "rgb(57, 58, 61)",
         black02: "rgb(51, 51, 51)",
         black03: "rgb(40, 40, 40)",
+        blue01: "#0077c5",
       },
       boxShadow: {
         btn: "0 0 0 2px rgb(255, 255, 255)",

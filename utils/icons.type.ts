@@ -20,4 +20,5 @@ export type IconsType =
   | "place"
   | "attachment"
   | "payment-mode"
-  | "file";
+  | "file"
+  | string;

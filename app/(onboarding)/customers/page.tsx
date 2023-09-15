@@ -1,7 +1,7 @@
 // import CustomInput from "@components/forms/custom-input.component";
 // import CustomerModal from "@components/forms/customer-modal.component";
-import CustomerRowItem from "@components/customer-row-item.component";
-import { Icon } from "@components/icon.component";
+import CustomerRowItem from "@components/global/customer-row-item.component";
+import { Icon } from "@components/global/icon.component";
 
 export default function CustomersPage() {
   return (

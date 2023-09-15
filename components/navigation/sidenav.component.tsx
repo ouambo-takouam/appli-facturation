@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Icon } from "../icon.component";
+import { Icon } from "../global/icon.component";
 import NavigationItem from "./navigation-item.component";
 import { getNavigationPathData } from "@utils/navigation";
 

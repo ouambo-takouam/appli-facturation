@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Icon } from "../icon.component";
+import { Icon } from "../global/icon.component";
 
 export default function NavigationItem({
   path,
@@ -7,6 +7,12 @@ export default function NavigationItem({
   label,
   active,
   selected,
+}: {
+  path: string;
+  iconName: string;
+  label: string;
+  active: boolean;
+  selected: boolean;
 }) {
   return (
     <li className="flex items-center h-10 cursor-pointer transition-all hover:bg-black">
