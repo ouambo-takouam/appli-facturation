@@ -51,6 +51,9 @@ export default function ProductModal() {
               handleProductTypeChange={updateProductType}
             />
           </>
+
+          {/** Interface d'edition */}
+          <></>
         </div>
       </div>
     </div>
