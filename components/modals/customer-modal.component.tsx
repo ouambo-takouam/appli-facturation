@@ -1,7 +1,7 @@
 import { Icon } from "@components/global/icon.component";
 import CustomInput from "../forms/custom-input.component";
 import CustomSelect from "../forms/custom-select.component";
-import CustomTextarea from "../forms/custom-textarea.component";
+// import CustomTextarea from "../forms/custom-textarea.component";
 
 export default function CustomerModal() {
   return (
